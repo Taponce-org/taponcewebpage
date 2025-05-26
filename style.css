@@ -1,0 +1,54 @@
+/* ===============================
+   Hero Carousel Caption
+   =============================== */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* ===============================
+   Feature Slider
+   =============================== */
+#feature-slider {
+  scroll-behavior: smooth;
+}
+
+.feature-item {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem 0.5rem;
+}
+
+@media (min-width: 576px) {
+  .feature-item {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .feature-item {
+    width: 33.3333%;
+  }
+}
+@media (min-width: 992px) {
+  .feature-item {
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .feature-item {
+    width: 20%;
+  }
+}
+
+/* ===============================
+   Testimonials
+   =============================== */
+#testimonials {
+  background-color: var(--clr-11);
+}
+
+#testimonials .rounded-circle {
+  object-fit: cover;
+}

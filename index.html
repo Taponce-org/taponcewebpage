@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taponce Finance App</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Global & Page CSS -->
+  <link rel="stylesheet" href="global/css/common.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70" tabindex="0">
+  <!-- Navbar + Anchor Top -->
+  <div id="navbar"></div>
+  <div id="top"></div>
+
+  <!-- Hero Carousel -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/images/hero 1.jpeg" class="d-block w-100" alt="Welcome" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Welcome to Taponce</h5>
+          <p>Smart tools for your money and business.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/hero 1.jpeg" class="d-block w-100" alt="Secure" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Secure & Reliable</h5>
+          <p>Your transactions are safe with us.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/hero 1.jpeg" class="d-block w-100" alt="Multi-currency" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Multi-currency Access</h5>
+          <p>Handle NGN, USD, crypto — all in one place.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/hero 1.jpeg" class="d-block w-100" alt="Analytics" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Real-time Analytics</h5>
+          <p>Monitor your growth with clarity.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/hero 1.jpeg" class="d-block w-100" alt="Africa" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Built for Africa</h5>
+          <p>Tailored financial tools for African entrepreneurs.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section id="features" class="py-5" style="background-color: #f8f9fa;">
+    <div class="container-fluid px-lg-5">
+      <h2 class="text-center mb-5">Our Services</h2>
+      <div class="position-relative">
+        <div id="feature-slider" class="d-flex overflow-hidden"></div>
+        <button class="btn btn-sm bg-light shadow position-absolute top-50 start-0 translate-middle-y" onclick="scrollFeature(-1)">«</button>
+        <button class="btn btn-sm bg-light shadow position-absolute top-50 end-0 translate-middle-y" onclick="scrollFeature(1)">»</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-5" style="background-color: var(--clr-11);">
+    <div class="container-fluid px-lg-5">
+      <div class="text-center">
+        <h6 class="text-uppercase fw-bold mb-3" style="color: var(--clr-21);">Testimonials</h6>
+        <h2 class="fw-bold display-6 mb-5">What Users Say About Us</h2>
+      </div>
+      <div class="row gy-5 flex-wrap">
+      <!-- First 4 always visible -->
+      <div class="col-lg-3 col-md-6 d-flex">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-3" width="50" height="50" alt="Aisha">
+        <div>
+          <p class="mb-1">I’ve been able to save more and track my expenses better with this app. The simplicity is unmatched!</p>
+          <small class="text-muted">— Aisha T., Lagos</small>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-flex">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" class="rounded-circle me-3" width="50" height="50" alt="John">
+        <div>
+          <p class="mb-1">The crypto wallet integration is seamless. I transfer funds in seconds with no hidden fees.</p>
+          <small class="text-muted">— John K., Abuja</small>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-flex">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle me-3" width="50" height="50" alt="Chinwe">
+        <div>
+          <p class="mb-1">Finally, a financial tool built for Nigeria. I love the multi-currency support and budgeting tips.</p>
+          <small class="text-muted">— Chinwe O., Enugu</small>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-flex">
+        <img src="https://randomuser.me/api/portraits/men/33.jpg" class="rounded-circle me-3" width="50" height="50" alt="Daniel">
+        <div>
+          <p class="mb-1">Customer service is fantastic. I had an issue and it was resolved same day. Very reliable platform.</p>
+          <small class="text-muted">— Daniel M., Kaduna</small>
+        </div>
+      </div>
+
+      <!-- Remaining 4 hidden on small screens -->
+      <div class="col-lg-3 col-md-6 d-none d-sm-flex">
+        <img src="https://randomuser.me/api/portraits/women/53.jpg" class="rounded-circle me-3" width="50" height="50" alt="Kemi">
+        <div>
+          <p class="mb-1">I love the budgeting reminders. It keeps me disciplined and helps me avoid unnecessary spending.</p>
+          <small class="text-muted">— Kemi A., Ibadan</small>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-none d-sm-flex">
+        <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle me-3" width="50" height="50" alt="Felix">
+        <div>
+          <p class="mb-1">Clean design, fast performance, and no bugs so far. This app is now part of my daily routine.</p>
+          <small class="text-muted">— Felix N., Port Harcourt</small>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-none d-sm-flex">
+        <img src="https://randomuser.me/api/portraits/women/39.jpg" class="rounded-circle me-3" width="50" height="50" alt="Grace">
+        <div>
+          <p class="mb-1">It helped me track all my transfers and subscriptions. Now I know exactly where my money goes.</p>
+          <small class="text-muted">— Grace B., Kano</small>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-none d-sm-flex">
+        <img src="https://randomuser.me/api/portraits/men/42.jpg" class="rounded-circle me-3" width="50" height="50" alt="Ahmed">
+        <div>
+          <p class="mb-1">I recommend it to all my friends! No charges on internal transfers and amazing savings features.</p>
+          <small class="text-muted">— Ahmed S., Ilorin</small>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- JS Scripts -->
+  <script src="global/js/common.js"></script>
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
