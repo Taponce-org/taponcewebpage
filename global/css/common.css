@@ -59,6 +59,12 @@ nav.fixed-top {
   margin: 0.2rem;
 }
 
+nav.navbar {
+  background-color: rgba(30, 51, 20, 0.9); /* semi-transparent */
+  backdrop-filter: blur(5px);
+}
+
+
 @media (min-width: 992px) {
   .navbar-left,
   .navbar-right {
