@@ -27,6 +27,11 @@
   scroll-snap-align: start;
 }
 
+#feature-carousel .carousel-item {
+  padding: 2rem 1rem;
+}
+
+
 @media (min-width: 576px) {
   .feature-item {
     width: 50%;
