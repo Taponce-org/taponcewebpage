@@ -46,10 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Reload to re-group items on screen size change
-let resizeTimer;
+let initialWidth = window.innerWidth;
+
 window.addEventListener("resize", () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
+  const newWidth = window.innerWidth;
+
+  // Only reload if width has truly changed (not height, scroll, etc.)
+  if (newWidth !== initialWidth) {
     location.reload();
-  }, 500);
+  }
 });
+
