@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const slider = document.getElementById("feature-slider");
+
   if (slider) {
     featureData.forEach(item => {
       const div = document.createElement("div");
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slider.appendChild(div);
     });
 
+    // Button scrolling
     window.scrollFeature = function (direction) {
       const item = slider.querySelector(".feature-item");
       if (!item) return;
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slider.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
     };
 
+    // Auto scroll every 5 seconds
     setInterval(() => {
       const item = slider.querySelector(".feature-item");
       if (!item) return;
@@ -47,28 +50,5 @@ document.addEventListener("DOMContentLoaded", function () {
         slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
       }
     }, 5000);
-  }
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const navToggle = document.querySelector(".navbar-toggler");
-  const navCollapse = document.querySelector(".navbar-collapse");
-
-  if (navCollapse && navToggle) {
-    let collapseTimeout;
-
-    navCollapse.addEventListener("mouseleave", () => {
-      // Set a short delay before collapsing
-      collapseTimeout = setTimeout(() => {
-        if (navCollapse.classList.contains("show")) {
-          navToggle.click(); // programmatically toggle it closed
-        }
-      }, 300); // delay (optional)
-    });
-
-    navCollapse.addEventListener("mouseenter", () => {
-      clearTimeout(collapseTimeout); // cancel collapse if they return
-    });
   }
 });

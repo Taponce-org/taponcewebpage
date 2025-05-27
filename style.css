@@ -47,14 +47,3 @@
     width: 20%;
   }
 }
-
-/* ===============================
-   Testimonials
-   =============================== */
-#testimonials {
-  background-color: var(--clr-11);
-}
-
-#testimonials .rounded-circle {
-  object-fit: cover;
-}

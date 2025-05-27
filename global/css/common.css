@@ -30,8 +30,8 @@
    Global Layout
    =============================== */
 body {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
   font-family: system-ui, sans-serif;
 }
 
@@ -55,6 +55,10 @@ nav.fixed-top {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.nav-margin{
+  margin: 0.2rem;
+}
+
 @media (min-width: 992px) {
   .navbar-left,
   .navbar-right {
@@ -66,6 +70,16 @@ nav.fixed-top {
     margin-right: 10rem;
   }
 }
+
+@media (max-width: 768px) {
+
+  .nav-margin{
+  margin: 0;
+  }
+
+}
+
+
 
 /* ===============================
    Footer
@@ -139,6 +153,13 @@ nav.fixed-top {
 }
 
 @media (max-width: 768px) {
+
+  body {
+  padding-left: 0;
+  padding-right: 0;
+  font-family: system-ui, sans-serif;
+  }
+
   .footer .row {
     text-align: center;
   }
