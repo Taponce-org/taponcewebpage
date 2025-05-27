@@ -8,28 +8,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const carouselInner = document.getElementById("feature-carousel-inner");
 
-  // group 5 items per carousel-item (will wrap naturally)
-  for (let i = 0; i < featureData.length; i += 5) {
-    const group = featureData.slice(i, i + 5);
+  const getGroupSize = () => {
+    const w = window.innerWidth;
+    if (w >= 1200) return 5;
+    if (w >= 992) return 4;
+    if (w >= 768) return 3;
+    if (w >= 576) return 2;
+    return 1;
+  };
+
+  const groupSize = getGroupSize();
+
+  for (let i = 0; i < featureData.length; i += groupSize) {
+    const group = featureData.slice(i, i + groupSize);
     const itemDiv = document.createElement("div");
     itemDiv.className = `carousel-item${i === 0 ? " active" : ""}`;
 
-    const row = document.createElement("div");
-    row.className = "row text-center";
+    const container = document.createElement("div");
+    container.className = "d-flex justify-content-between align-items-stretch w-100 px-4 gap-3";
 
     group.forEach((item) => {
-      const col = document.createElement("div");
-      col.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4";
-      col.innerHTML = `
+      const card = document.createElement("div");
+      card.className = "text-center";
+      card.style.flex = `0 0 ${100 / groupSize}%`;
+      card.innerHTML = `
         <img src="${item.img}" class="img-fluid mb-3 rounded" alt="${item.title}">
         <h5 class="fw-bold">${item.title}</h5>
         <p class="text-muted">${item.desc}</p>
         <a href="${item.link}" class="btn btn-sm" style="background-color: var(--clr-6); color: white;">Learn More</a>
       `;
-      row.appendChild(col);
+      container.appendChild(card);
     });
 
-    itemDiv.appendChild(row);
+    itemDiv.appendChild(container);
     carouselInner.appendChild(itemDiv);
   }
+});
+
+// Reload to re-group items on screen size change
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    location.reload();
+  }, 500);
 });
