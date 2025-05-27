@@ -49,3 +49,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 5000);
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".navbar-toggler");
+  const navCollapse = document.querySelector(".navbar-collapse");
+
+  if (navCollapse && navToggle) {
+    let collapseTimeout;
+
+    navCollapse.addEventListener("mouseleave", () => {
+      // Set a short delay before collapsing
+      collapseTimeout = setTimeout(() => {
+        if (navCollapse.classList.contains("show")) {
+          navToggle.click(); // programmatically toggle it closed
+        }
+      }, 300); // delay (optional)
+    });
+
+    navCollapse.addEventListener("mouseenter", () => {
+      clearTimeout(collapseTimeout); // cancel collapse if they return
+    });
+  }
+});

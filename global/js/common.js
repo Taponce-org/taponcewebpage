@@ -31,3 +31,26 @@ document.addEventListener("DOMContentLoaded", () => {
   })
   .catch(err => console.error("Component load error:", err));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".navbar-toggler");
+  const navCollapse = document.querySelector(".navbar-collapse");
+
+  if (navCollapse && navToggle) {
+    navCollapse.addEventListener("focusout", (e) => {
+      // Delay is needed to allow focus to fully shift away
+      setTimeout(() => {
+        const activeEl = document.activeElement;
+        const isInsideMenu = navCollapse.contains(activeEl) || navToggle.contains(activeEl);
+        const isMenuOpen = navCollapse.classList.contains("show");
+
+        if (!isInsideMenu && isMenuOpen) {
+          navToggle.click(); // collapse it
+        }
+      }, 100);
+    });
+  }
+});
+
+
+

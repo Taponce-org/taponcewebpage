@@ -11,6 +11,11 @@
    Feature Slider
    =============================== */
 #feature-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
 
@@ -19,6 +24,7 @@
   width: 100%;
   max-width: 100%;
   padding: 1rem 0.5rem;
+  scroll-snap-align: start;
 }
 
 @media (min-width: 576px) {
