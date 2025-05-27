@@ -24,20 +24,28 @@ document.addEventListener("DOMContentLoaded", () => {
         target: '#mainNav',
         offset: 70
       });
+
+      // ✅ NAVBAR COLLAPSE HANDLER
+      const navToggle = document.querySelector(".navbar-toggler");
+      const navCollapse = document.querySelector("#navbarNav");
+
+      const isNavbarOpen = () => {
+        return (
+          navCollapse.classList.contains("show") &&
+          navToggle.getAttribute("aria-expanded") === "true"
+        );
+      };
+
+
+      document.addEventListener("touchstart", (event) => {
+        const isInside = navCollapse.contains(event.target) || navToggle.contains(event.target);
+        if (!isInside && isNavbarOpen()) {
+          console.log("I am working perfectly");
+          
+          navToggle.click(); // collapse it safely
+        }
+      });
     }, 300);
   })
   .catch(err => console.error("Component load error:", err));
-
-  // Close navbar on mobile when tapping outside
-  const navToggle = document.querySelector(".navbar-toggler");
-  const navCollapse = document.querySelector(".navbar-collapse");
-
-  if (navCollapse && navToggle) {
-    document.addEventListener("touchstart", (event) => {
-      const isInside = navCollapse.contains(event.target) || navToggle.contains(event.target);
-      if (!isInside && navCollapse.classList.contains("show")) {
-        navToggle.click();
-      }
-    });
-  }
 });
