@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="${item.img}" class="img-fluid mb-3 rounded" alt="${item.title}">
         <h5 class="fw-bold">${item.title}</h5>
         <p class="text-muted">${item.desc}</p>
-        <a href="${item.link}" class="btn btn-sm" style="background-color: var(--clr-6); color: white;">Learn More</a>
+        <a href="${item.link}" class="btn btn-sm" style="background-color: var(--clr-24); color: white;">Learn More</a>
       `;
       container.appendChild(card);
     });
